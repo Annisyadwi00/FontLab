@@ -1,0 +1,259 @@
+:root {
+    --bg-color: #f8f9fa;
+    --panel-bg: #ffffff;
+    --border-color: #e9ecef;
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --accent: #4361ee;
+    --accent-hover: #3a56d4;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    min-width: 320px;
+    background-color: var(--panel-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.03);
+    z-index: 10;
+}
+
+header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.controls {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-row {
+    display: flex;
+    gap: 16px;
+}
+
+.half {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+label span {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Inputs */
+select, input[type="color"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #fff;
+}
+
+select:focus {
+    border-color: var(--accent);
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+input[type="color"] {
+    padding: 2px;
+    height: 36px;
+    cursor: pointer;
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.btn-group button {
+    flex: 1;
+    background: #fff;
+    border: none;
+    border-right: 1px solid #ced4da;
+    padding: 8px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.btn-group button:last-child {
+    border-right: none;
+}
+
+.btn-group button:hover {
+    background: #f8f9fa;
+    color: var(--text-main);
+}
+
+.btn-group button.active {
+    background: #eef2ff;
+    color: var(--accent);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.reset-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+/* Preview Area */
+.preview-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    overflow-y: auto;
+    background-color: #ffffff; /* Will be overridden by JS */
+    transition: background-color 0.3s ease;
+}
+
+.preview-content {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    outline: none;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    /* Typography defaults - will be overridden by JS */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.preview-content:focus {
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.preview-content h1, 
+.preview-content h2, 
+.preview-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.preview-content h1:first-child,
+.preview-content h2:first-child {
+    margin-top: 0;
+}
+
+.preview-content p {
+    margin-bottom: 1.5em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 50vh;
+    }
+    .preview-area {
+        padding: 20px;
+    }
+    .preview-content {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography & Font Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <header>
+                <h1>Typography Tester</h1>
+                <p>Uji kombinasi font untuk web Anda.</p>
+            </header>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="font-family">Font Family</label>
+                    <select id="font-family">
+                        <optgroup label="Sans-Serif">
+                            <option value="'Inter', sans-serif">Inter</option>
+                            <option value="'Roboto', sans-serif">Roboto</option>
+                            <option value="'Open Sans', sans-serif">Open Sans</option>
+                            <option value="'Lato', sans-serif">Lato</option>
+                            <option value="'Montserrat', sans-serif">Montserrat</option>
+                            <option value="'Poppins', sans-serif">Poppins</option>
+                            <option value="Arial, sans-serif">Arial (System)</option>
+                            <option value="Helvetica, sans-serif">Helvetica (System)</option>
+                        </optgroup>
+                        <optgroup label="Serif">
+                            <option value="'Merriweather', serif">Merriweather</option>
+                            <option value="'Playfair Display', serif">Playfair Display</option>
+                            <option value="'Lora', serif">Lora</option>
+                            <option value="Georgia, serif">Georgia (System)</option>
+                            <option value="'Times New Roman', serif">Times New Roman (System)</option>
+                        </optgroup>
+                        <optgroup label="Monospace">
+                            <option value="'Courier New', monospace">Courier New (System)</option>
+                            <option value="monospace">Monospace (System)</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="font-size">Font Size (<span id="font-size-val">16px</span>)</label>
+                    <input type="range" id="font-size" min="12" max="72" value="16" step="1">
+                </div>
+
+                <div class="control-group">
+                    <label for="line-height">Line Height (<span id="line-height-val">1.5</span>)</label>
+                    <input type="range" id="line-height" min="1" max="3" value="1.5" step="0.05">
+                </div>
+
+                <div class="control-group">
+                    <label for="letter-spacing">Letter Spacing (<span id="letter-spacing-val">0px</span>)</label>
+                    <input type="range" id="letter-spacing" min="-2" max="10" value="0" step="0.1">
+                </div>
+
+                <div class="control-group">
+                    <label for="font-weight">Font Weight</label>
+                    <select id="font-weight">
+                        <option value="300">300 (Light)</option>
+                        <option value="400" selected>400 (Regular)</option>
+                        <option value="500">500 (Medium)</option>
+                        <option value="600">600 (Semi-Bold)</option>
+                        <option value="700">700 (Bold)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Text Align</label>
+                    <div class="btn-group" id="text-align">
+                        <button class="active" data-align="left" aria-label="Align Left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"></line><line x1="15" y1="12" x2="3" y2="12"></line><line x1="17" y1="18" x2="3" y2="18"></line></svg>
+                        </button>
+                        <button data-align="center" aria-label="Align Center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"></line><line x1="19" y1="12" x2="5" y2="12"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
+                        </button>
+                        <button data-align="right" aria-label="Align Right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="12" x2="9" y2="12"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                        </button>
+                        <button data-align="justify" aria-label="Justify">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="12" x2="3" y2="12"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-row">
+                    <div class="control-group half">
+                        <label for="text-color">Text Color</label>
+                        <input type="color" id="text-color" value="#1a1a1a">
+                    </div>
+                    <div class="control-group half">
+                        <label for="bg-color">Background</label>
+                        <input type="color" id="bg-color" value="#ffffff">
+                    </div>
+                </div>
+                
+                <button id="reset-btn" class="reset-btn">Reset Defaults</button>
+            </div>
+        </aside>
+
+        <main class="preview-area" id="preview-area">
+            <div class="preview-content" id="preview-text" contenteditable="true" spellcheck="false">
+                <h2>Tipografi adalah Seni dan Teknik</h2>
+                <p>Tipografi merupakan seni dan teknik mengatur huruf serta teks agar mudah dibaca, menarik, dan sesuai dengan tujuan komunikasi. Dalam desain web, tipografi bukan hanya soal memilih font yang indah, melainkan juga tentang menciptakan hierarki visual yang jelas. Pengaturan <em>line-height</em> yang tepat memastikan mata pembaca dapat berpindah dari satu baris ke baris berikutnya dengan nyaman tanpa merasa tersesat.</p>
+                <p>Selain itu, <strong>letter-spacing</strong> (jarak antar huruf) juga memainkan peran krusial. Jarak yang terlalu rapat dapat membuat teks terlihat menumpuk dan sulit dieja, sedangkan jarak yang terlalu renggang dapat memecah kesatuan kata dan memperlambat kecepatan membaca. Bereksperimen dengan kombinasi font serif untuk judul dan sans-serif untuk tubuh teks adalah salah satu praktik umum yang sering menghasilkan kontras yang elegan.</p>
+                <p>Silakan edit teks ini secara langsung! Ubah kata-katanya, hapus paragraf, atau tambahkan konten Anda sendiri untuk melihat bagaimana tipografi yang Anda atur bekerja pada teks nyata. Anda bisa menggunakan panel di sebelah kiri untuk menyesuaikan berbagai properti tipografi secara real-time.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
